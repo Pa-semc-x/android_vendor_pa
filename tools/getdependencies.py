@@ -6,9 +6,7 @@ import json
 import re
 from xml.etree import ElementTree
 
-product = sys.argv[1];
-
-device = product[product.index("_") + 1:]
+device = sys.argv[1];
 
 def exists_in_tree(lm, repository):
     for child in lm.getchildren():
@@ -34,7 +32,7 @@ def indent(elem, level=0):
 
 def is_in_manifest(projectname):
     try:
-        lm = ElementTree.parse(".repo/local_manifest.xml")
+        lm = ElementTree.parse(".repo/local_manifests/roomservice.xml")
         lm = lm.getroot()
     except:
         lm = ElementTree.Element("manifest")
@@ -57,7 +55,7 @@ def is_in_manifest(projectname):
 
 def add_to_manifest(repositories):
     try:
-        lm = ElementTree.parse(".repo/local_manifest.xml")
+        lm = ElementTree.parse(".repo/local_manifests/roomservice.xml")
         lm = lm.getroot()
     except:
         lm = ElementTree.Element("manifest")
@@ -85,12 +83,12 @@ def add_to_manifest(repositories):
     raw_xml = ElementTree.tostring(lm)
     raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
 
-    f = open('.repo/local_manifest.xml', 'w')
+    f = open('.repo/local_manifests/roomservice.xml', 'w')
     f.write(raw_xml)
     f.close()
 
 def fetch_dependencies(device):
-    print 'Looking for product dependencies'
+#    print 'Looking for PAC product dependencies'
     dependencies_path = 'vendor/pa/dependencies/' + device + '.dependencies'
 
     syncable_repos = []
@@ -107,15 +105,15 @@ def fetch_dependencies(device):
                 fetch_list.append(dependency)
                 syncable_repos.append(dependency['target_path'])
             else:
-                print '  %s already in local_manifest' % repo_full
+                print '    %s already in local_manifest' % repo_full
 
         dependencies_file.close()
 
         if len(fetch_list) > 0:
             print 'Adding dependencies to local_manifest'
             add_to_manifest(fetch_list)
-    else:
-        print 'dependencies definition file not found, bailing out.'
+#    else:
+#        print 'dependencies definition file not found, bailing out.'
 
     if len(syncable_repos) > 0:
         print 'Syncing dependencies'
