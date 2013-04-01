@@ -1,8 +1,8 @@
 [
     {
         "account":      "PAC-man",
-        "repository":   "android_device_semc_mango",
-        "target_path":  "device/semc/mango",
+        "repository":   "android_device_semc_satsuma",
+        "target_path":  "device/semc/satsuma",
         "revision":     "cm-10.1"
     },
     {
