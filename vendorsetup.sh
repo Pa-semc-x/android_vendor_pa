@@ -1,4 +1,9 @@
+add_lunch_combo pa_anzu-userdebug
 add_lunch_combo pa_coconut-userdebug
+add_lunch_combo pa_haida-userdebug
+add_lunch_combo pa_hallon-userdebug
+add_lunch_combo pa_iyokan-userdebug
 add_lunch_combo pa_mango-userdebug
 add_lunch_combo pa_satsuma-userdebug
 add_lunch_combo pa_smultron-userdebug
+add_lunch_combo pa_urushi-userdebug

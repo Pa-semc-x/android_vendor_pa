@@ -1,8 +1,8 @@
 [
     {
         "account":      "PA-semc",
-        "repository":   "android_device_semc_haida",
-        "target_path":  "device/semc/haida",
+        "repository":   "android_device_semc_hallon",
+        "target_path":  "device/semc/hallon",
         "revision":     "cm-10.1"
     },
     {
