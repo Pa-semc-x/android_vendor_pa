@@ -18,10 +18,10 @@
         "revision":     "cm-10.1"
     },
     {
-        "account":      "cm42semc",
-        "repository":   "semc-kernel-msm7x30",
+        "account":      "nobodyAtall",
+        "repository":   "msm7x30-2.6.32.x-nAa",
         "target_path":  "kernel/semc/msm7x30",
-        "revision":     "cm-10.1"
+        "revision":     "master"
     },
     {
         "account":      "CyanogenMod",
